@@ -17,7 +17,7 @@ public class HelloServlet extends HttpServlet {
         System.out.println("request = " + request); //org.apache.catalina.connector.RequestFacade@7aa3142
         System.out.println("response = " + response); //org.apache.catalina.connector.ResponseFacade@290b21c9
 
-        //queryString 조회
+        //queryString 조회!
         String username = request.getParameter("username");
         System.out.println("username = " + username);
 
