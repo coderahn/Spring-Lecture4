@@ -36,5 +36,7 @@ public class RequestParamServlet extends HttpServlet {
         }
 
         response.getWriter().write("ok");
+        
+        //깃 commit and push 테스트 코드 작성
     }
 }
