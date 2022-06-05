@@ -15,10 +15,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-//urlPattern을 *로 주어 /front-controller/v1/ 하위의 모든 URL요청 매핑되어 이 서블릿이 호출됨
+//urlPattern을 *로 주어 /front-controller/v2/ 하위의 모든 URL요청 매핑되어 이 서블릿이 호출됨
 @WebServlet(name = "FrontControllerServletV2", urlPatterns = "/front-controller/v2/*")
 public class FrontControllerServletV2 extends HttpServlet {
-    //URL을 key로 하여, ControllerV1 구현체들을 value로 가져올 수 있는 매핑정보MAP
+    //URL을 key로 하여, ControllerV2 구현체들을 value로 가져올 수 있는 매핑정보MAP
     private Map<String, ControllerV2> controllerMap = new HashMap<>();
 
     //URL별 매핑정보 생성
