@@ -19,14 +19,14 @@ import java.util.Map;
 //urlPattern을 *로 주어 /front-controller/v4/ 하위의 모든 URL요청 매핑되어 이 서블릿이 호출됨
 @WebServlet(name = "FrontControllerServletV4", urlPatterns = "/front-controller/v4/*")
 public class FrontControllerServletV4 extends HttpServlet {
-    //URL을 key로 하여, ControllerV3 구현체들을 value로 가져올 수 있는 매핑정보MAP
+    //URL을 key로 하여, ControllerV4 구현체들을 value로 가져올 수 있는 매핑정보MAP
     private Map<String, ControllerV4> controllerMap = new HashMap<>();
 
     //URL별 매핑정보 생성
     public FrontControllerServletV4() {
-        controllerMap.put("/front-controller/v3/members/new-form", new MemberFormControllerV4());
-        controllerMap.put("/front-controller/v3/members/save", new MemberSaveControllerV4());
-        controllerMap.put("/front-controller/v3/members", new MemberListControllerV4());
+        controllerMap.put("/front-controller/v4/members/new-form", new MemberFormControllerV4());
+        controllerMap.put("/front-controller/v4/members/save", new MemberSaveControllerV4());
+        controllerMap.put("/front-controller/v4/members", new MemberListControllerV4());
     }
 
     @Override

@@ -27,6 +27,7 @@ public class MyView {
         dispatcher.forward(request, response);
     }
 
+    //컨트롤러에서 model에 담은 객체들을 꺼내 setAttribute 처리하여 JSP에서 사용할 수 있도록 처리
     private void modelToRequestAttribute(Map<String, Object> model, HttpServletRequest request) {
         model.forEach((key, value) -> request.setAttribute(key, value));
     }

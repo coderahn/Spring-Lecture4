@@ -40,24 +40,23 @@ public class FrontControllerServletV3 extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-
-        //가져온 구현체의 오버라이딩 메소드 실행
+        
         //v3 : request, response를 넘겨주지 말고 paramMap을 넘긴다.
-        //레벨에 맞추기 위해 구체적인 로직은 메소드 추출(ctrl + alt + m)
         Map<String, String> paramMap = createParamMap(request);
         ModelView mv = controller.process(paramMap);
 
-        //viewResolver처리 : 논리이름(viewName)을 물리이름으로 변경
         String viewName = mv.getViewName();
         MyView view = viewResolver(viewName);
 
         view.render(mv.getModel(), request, response);
     }
 
+    //view의 논리명을 물리명으로 변경
     private MyView viewResolver(String viewName) {
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 
+    //request 요청 파라미터를 Map에 셋팅해주는 역할
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
