@@ -15,7 +15,6 @@ public class OldController implements Controller {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("OldController.handleRequest");
 
-        //이대로 호출하면 white label error 페이지
         //뷰리졸버를 만들어주자 -> application.properties
         return new ModelAndView("new-form");
     }
